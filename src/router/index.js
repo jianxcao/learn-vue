@@ -8,6 +8,8 @@ import Learn4 from '../pages/learn4'
 import Learn5 from '../pages/Learn5'
 import Learn6 from '../pages/Learn6'
 import Learn7 from '../pages/Learn7'
+import Learn8 from '../pages/Learn8'
+import Learn9 from '../pages/Learn9'
 window.App = App
 window.Learn1 = Learn1
 window.Learn2 = Learn2
@@ -16,6 +18,8 @@ window.Learn4 = Learn4
 window.Learn5 = Learn5
 window.Learn6 = Learn6
 window.Learn7 = Learn7
+window.Learn8 = Learn8
+window.Learn9 = Learn9
 export default new VueRouter({
   mode: 'history',
   base: __dirname,
@@ -51,6 +55,20 @@ export default new VueRouter({
     {
       path: '/learn7',
       component: Learn7
+    },
+    {
+      path: '/learn8',
+      component: Learn8
+    },
+    {
+      path: '/learn9',
+      component: Learn9
+    },
+    {
+      path: '*',
+      component: {
+        template: '<div>404 not found</div>'
+      }
     }
   ]
 })

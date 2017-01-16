@@ -2,7 +2,10 @@
   <div class="warp">
     <!--自定义组件-->
     <!--slot里面取得时父作用域的内容事件也会是父作用域-->
-    <my-component><div>test slot</div><div slot="before">before slot{{b}}</div></my-component>
+    <my-component ref="myCom" @add="test1">
+      <div>test slot</div>
+      <div slot="before">before slot{{b}}</div>
+    </my-component>
   </div>
 </template>
 <script>
@@ -18,7 +21,7 @@ var Child = {
       this.$emit('add', this.test)
     }
   },
-  template: '<div><slot name="before"></slot>A custom component! <slot>no content</slot> </div>'
+  template: '<div @click="add"><slot name="before"></slot>A custom component! <slot>no content</slot> </div>'
 }
 
 export default {
@@ -29,7 +32,7 @@ export default {
   },
   methods: {
     test1 () {
-      console.log('test1', this.name)
+      console.log('test1', this.$refs.myCom)
     }
   },
   components: {

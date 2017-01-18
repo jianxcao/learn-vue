@@ -2,7 +2,7 @@
   "name": "learn-vue",
   "version": "1.0.0",
   "description": "learn vue",
-  "author": "jxcao",
+  "author": "jianxcao",
   "scripts": {
     "dev": "node build/dev-server.js",
     "build": "node build/build.js",

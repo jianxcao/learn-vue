@@ -1,5 +1,6 @@
 <template>
 	<div>
+		<test></test>
 		<!--我是注释<span>注释<span>-->
 		<!--v-model双向绑定就是这么好用，必须是 有change事件的元素，比如 textArea,select input,
 		可以自定义双向绑定，其实v-model就是一个 语法糖等
@@ -33,6 +34,7 @@ import Vue from 'vue';
 var com = Vue.component('test-cjx', {
 	template: '<div class="cjx test">我是test-cjx组件</div>'
 });
+import test from './test.vue';
 // 属性与方法重名，方法钓球不到了
 export default {
 	customOpt: 111,
@@ -57,7 +59,8 @@ export default {
 		};
 	},
 	components: {
-		com
+		com,
+		test
 	},
 	methods: {
 		cls () {
@@ -76,3 +79,9 @@ export default {
 	name: 'learn2'
 };
 </script>
+
+<style scoped>
+	.test {
+		background: green;
+	}
+</style>

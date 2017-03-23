@@ -3,6 +3,8 @@
 import Vue from 'vue';
 import router from './router';
 import VueRouter from 'vue-router';
+import Vuex from 'vuex';
+Vue.use(Vuex);
 // import test from './pages/test'
 var popUpManager = {test: 111};
 Vue.use(VueRouter);
@@ -33,9 +35,21 @@ Vue.mixin({
 window.router = router;
 window.VueRouter = VueRouter;
 window.Vue = Vue;
+const store = new Vuex.Store({
+	state: {
+		count: 0
+	},
+	mutations: {
+		increment (state) {
+			state.count++;
+		}
+	}
+});
+window.store = store;
 /* eslint-disable no-new */
 var root = new Vue({
 	router,
+	store,
 	el: '#app',
 	template: '<router-view class="view"></router-view>'
 });
